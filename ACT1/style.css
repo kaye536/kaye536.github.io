@@ -1,0 +1,117 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-pink: #FFD1DC;
+    --dark-pink: #FFB7C5;
+    --bg-cream: #FFF5E1;
+    --text-gray: #5D5D5D;
+    --white: #FFFFFF;
+    --transition: 0.3s;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-cream);
+    color: var(--text-gray);
+}
+
+
+header, footer {
+    background-color: var(--primary-pink);
+    padding: 20px;
+    text-align: center;
+}
+
+header { border-bottom: 5px solid var(--dark-pink); }
+
+.main-container {
+    display: flex;
+    min-height: 80vh;
+}
+
+.sidebar {
+    width: 200px;
+    background: var(--white);
+    padding: 20px;
+    border-right: 2px solid var(--primary-pink);
+}
+
+.content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+
+.sidebar ul { list-style: none; }
+
+.sidebar li a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--text-gray);
+    border-radius: 15px;
+    transition: var(--transition);
+    margin-bottom: 10px;
+}
+
+.sidebar li a:hover, .sidebar li a.active {
+    background-color: var(--primary-pink);
+    font-weight: bold;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.product-card, .owner-card, .contact-form {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.product-card { text-align: center; transition: transform var(--transition); }
+.product-card:hover { transform: scale(1.05); }
+
+.owner-card { 
+    max-width: 400px; 
+    border: 3px dashed var(--primary-pink); 
+    border-radius: 30px; 
+}
+
+
+.form-group { margin-bottom: 15px; }
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--primary-pink);
+    border-radius: 10px;
+}
+
+button {
+    background-color: var(--primary-pink);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text-gray);
+    transition: var(--transition);
+}
+
+button:hover { background-color: var(--dark-pink); }
+
+
+.logo { font-size: 50px; }
+.product-img { font-size: 60px; }

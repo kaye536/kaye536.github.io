@@ -6,47 +6,43 @@ document.addEventListener('DOMContentLoaded', () => {
         card.onmouseleave = () => card.style.backgroundColor = '#FFFFFF';
     });
 
-    //  (Login/Signup)
-    const authForm = document.querySelector('.contact-form');
-    if (authForm) {
-        authForm.onsubmit = (e) => {
+    // LOGIN USER PROFILE
+    const loginForm = document.querySelector('.contact-form');
+    if (loginForm && loginForm.querySelector('input[type="email"]')) {
+        loginForm.onsubmit = (e) => {
             e.preventDefault();
             
-            
+            const userEmail = loginForm.querySelector('input[type="email"]').value;
             const user = {
-                name: authForm.querySelector('input[type="text"]')?.value || "Guest",
-                email: authForm.querySelector('input[type="email"]')?.value,
+                name: "Plushie Lover", 
+                email: userEmail,
                 date: new Date().toLocaleDateString()
             };
 
-            
             localStorage.setItem('userProfile', JSON.stringify(user));
-            alert("Success! Welcome to the Plushie Family.");
+            
+            // PROFILE PAGE
             window.location.href = 'profile.html';
         };
     }
 
-    
-    const display = document.getElementById('profile-display');
-    if (display) {
+    // PROFILE PAGE
+    const profileDisplay = document.getElementById('profile-display');
+    if (profileDisplay) {
         const data = JSON.parse(localStorage.getItem('userProfile'));
-        
-        display.innerHTML = data ? `
+        profileDisplay.innerHTML = data ? `
             <div class="owner-avatar">👤</div>
-            <h3>Welcome, ${data.name}!</h3>
+            <h3>Welcome back!</h3>
             <p><strong>Email:</strong> ${data.email}</p>
-            <p><strong>Member Since:</strong> ${data.date}</p>
+            <p><strong>Logged in on:</strong> ${data.date}</p>
             <button onclick="localStorage.clear(); location.reload();">Logout</button>
-        ` : `<p>No profile found. Please <a href="login.html">Login</a>.</p>`;
+        ` : `<p>Please <a href="login.html">Login</a> to see your profile.</p>`;
     }
 
-    // 4. ASYNC-WAIT
+    // ASYNC-WAIT & OPTIONAL CHAINING 
     const checkOrder = async () => {
         const mock = { data: { status: "Preparing your plushie..." } };
-        
         await new Promise(res => setTimeout(res, 1000)); 
-        
-        //OPTIONALCHAINING
         const status = mock?.data?.status; 
         console.log("Order Update:", status || "No status available");
     };

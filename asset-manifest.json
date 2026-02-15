@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kavwebshop/static/css/main.98d019ca.css",
+    "main.js": "/kavwebshop/static/js/main.4cc21096.js",
+    "static/js/453.a965249c.chunk.js": "/kavwebshop/static/js/453.a965249c.chunk.js",
+    "index.html": "/kavwebshop/index.html",
+    "main.98d019ca.css.map": "/kavwebshop/static/css/main.98d019ca.css.map",
+    "main.4cc21096.js.map": "/kavwebshop/static/js/main.4cc21096.js.map",
+    "453.a965249c.chunk.js.map": "/kavwebshop/static/js/453.a965249c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98d019ca.css",
+    "static/js/main.4cc21096.js"
+  ]
+}
